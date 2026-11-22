@@ -55,6 +55,9 @@ def play_game():
         print("\nWord:", display_word(secret_word, guessed_letters))
         print("Attempts remaining:", attempts)
 
+        # Show letters the player has already guessed
+        print("Letters guessed:", ", ".join(sorted(guessed_letters)) or "None")
+
         guess = input("Guess a letter: ").lower().strip()
 
         # Make sure the player enters one alphabetical letter
