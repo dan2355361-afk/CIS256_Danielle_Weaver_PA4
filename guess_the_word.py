@@ -58,8 +58,13 @@ def play_game():
         guess = input("Guess a letter: ").lower().strip()
 
         # Make sure the player enters one alphabetical letter
-        if len(guess) != 1 or not guess.isalpha():
-            print("Please enter one letter at a time!")
+        if not guess:
+            print("You need to enter a letter!")
+            continue
+
+        # Only accept one letter from A to Z
+        if len(guess) != 1 or not guess.isascii() or not guess.isalpha():
+            print("Please enter one letter from A to Z!")
             continue
 
         # Do not count letters that have already been guessed
