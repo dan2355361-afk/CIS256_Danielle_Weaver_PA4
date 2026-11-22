@@ -31,3 +31,8 @@ def test_repeated_letters():
 def test_hidden_letters():
     result = display_word("dragon", {"d", "g"})
     assert result == "d _ _ g _ _"
+
+# Test that all repeated letters are revealed correctly
+def test_multiple_repeated_letters():
+    result = display_word("bookkeeper", {"o", "e"})
+    assert result == "_ o o _ _ e e _ e _"
